@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: legacy 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: legacy
+  template:
+    metadata:
+      labels:
+        app: legacy 
+    spec:
+      containers:
+        - name: legacy 
+          image: akhamessiacr.azurecr.io/legacy
+          ports:
+          - containerPort: 8080
